@@ -12,6 +12,10 @@ function App() {
   return (
     
     <Router>
+      <nav>
+        <Link to="/"> Home </Link>
+        <Link to="/FcList"> Free Company List</Link>
+      </nav>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
@@ -20,6 +24,12 @@ function App() {
         <Route path='/fclist' element={<FcList />} />
         <Route path='/fcpage' element={<FcPage />} />
       </Routes>
+      <div>
+        
+        <p>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</p>
+        <p>FINAL FANTASY XIV © SQUARE ENIX CO., LTD.</p>
+
+        </div>
     </Router>
   );
 }

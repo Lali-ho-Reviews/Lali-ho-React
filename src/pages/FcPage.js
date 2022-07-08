@@ -1,8 +1,10 @@
 import React from "react";
+import { useParams} from "react-router-dom";
 
 
 function FcPage() {
-  return <h2>Fc Page</h2>;
+    let {id} = useParams();
+  return <h2> {id} Free Company </h2>;
   
 }
 

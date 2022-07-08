@@ -22,7 +22,7 @@ function App() {
         <Route path='/adminpage' element={<AdminPage />} />
         <Route path='/userpage' element={<UserPage />} />
         <Route path='/fclist' element={<FcList />} />
-        <Route path='/fcpage' element={<FcPage />} />
+        <Route path='/fcpage/:id' element={<FcPage />} />
       </Routes>
       <div>
         

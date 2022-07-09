@@ -12,10 +12,9 @@ class FcList extends Component {
 
   componentDidMount () {
     const URL = 'http://localhost:3000/companies';
-    fetch(URL, {
-        method: 'POST'
-    }).then(response => response.json())
-    .then(json => { this.setState({json}); });
+    fetch(URL)
+    .then(response => response.json())
+    .then(data => console.log(data))
   }
 
   render() {

@@ -12,16 +12,16 @@ class FcList extends Component {
 
   componentDidMount () {
     const URL = 'http://localhost:3000/companies';
-    fetch(URL, {
-        method: 'POST'
-    }).then(response => response.json())
-    .then(json => { this.setState({json}); });
+    fetch(URL).then(response => response.json())
+    .then(data => { this.setState({data}); });
+    
   }
 
   render() {
+    console.log(this.state.data)
     return (
       <div>
-        Fc name: {this.state.json.name} <br />
+        Fc name: {this.state.data[0].name} <br />
         <br></br>
         Tagline: {this.state.json.slogan} <br />
         <br></br>

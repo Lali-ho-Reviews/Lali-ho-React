@@ -23,9 +23,9 @@ function FcPage() {
   }, []);
 
   return <div><h2>Free Company - {data.name}</h2>
-          <table></table>
-          <tr>
-          </tr>
+          <table>
+            <tr>
+            </tr>
           </table>
   </div>;
 

@@ -26,7 +26,8 @@ class FcList extends Component {
             <td>FC NAME</td>
             <td>Tag</td>
             <td>Members</td> 
-            <td>Reviews</td> 
+            <td>Reviews</td>
+            <td>Link</td> 
           </tr>
         {this.state.data.map(fc => (
           <tr>
@@ -34,6 +35,7 @@ class FcList extends Component {
             <td>{fc.slogan}</td>
             <td>{fc.members}</td>
             <td>{fc.rank}</td>
+            <td><a href={"/FcPage/" + fc.id}>Link</a></td>
           </tr>
         ))}
         </table>

@@ -19,7 +19,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">
+            <a href="https://github.com/Lali-ho-Reviews" target="_blank" rel="noopener noreferrer" class="mr-4 hover:underline md:mr-6">
               Github
             </a>
           </li>

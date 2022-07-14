@@ -19,6 +19,7 @@ class FcList extends Component {
   }
 
   render() {
+
     return (
       <div>
         <table>
@@ -39,6 +40,7 @@ class FcList extends Component {
           </tr>
         ))}
         </table>
+
       </div>
     );
   }

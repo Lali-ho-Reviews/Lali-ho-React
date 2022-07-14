@@ -7,6 +7,7 @@ import UserPage from '../pages/UserPage';
 import FcList from '../pages/FcList';
 import FcPage from '../pages/FcPage';
 import About from '../pages/About';
+import Navbar from './Navbar';
 import Footer from './Footer';
 
 
@@ -17,17 +18,16 @@ function App() {
   return (
     
     <Router>
-      <nav>
-        <Link to="/"> Home </Link>
-        <Link to="/FcList"> Free Company List</Link>
-      </nav>
+      <div>
+      <Navbar/>
+      </div>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/adminpage' element={<AdminPage />} />
         <Route path='/userpage' element={<UserPage />} />
-        <Route path='/fclist' element={<FcList />} />
-        <Route path='/fcpage/:id' element={<FcPage />} />
+        <Route path='/fc' element={<FcList />} />
+        <Route path='/fc/:id' element={<FcPage />} />
         <Route path='/about' element={<About />} />
       </Routes>
       <div>

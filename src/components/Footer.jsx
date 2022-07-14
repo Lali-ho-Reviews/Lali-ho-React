@@ -3,12 +3,16 @@ import React from "react";
 
 const Footer = () => {
   return (
+
     <footer class="p-0 bg-fgrey rounded-lg shadow md:px-6 md:py-4 ">
+
       <div class="sm:flex sm:items-center sm:justify-between">
         <a class="flex items-center sm:mb-0">
           <img
             src= "/logo3.png"
+
             class=" h-6 pt-0 m-0"
+
             alt="Lali-ho Logo"
           />
         </a>
@@ -30,11 +34,13 @@ const Footer = () => {
           </li>
         </ul>
       </div>
+
       <span class="block text-xs text-gray-500 sm:text-center dark:text-gray-400 ">
         © 2022 Lali-ho™ . All Rights Reserved.{" "}
       <hr class=" border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-1" />
       
         <span class="block text-xs pt-1 pb-0 xs:text-center "></span>
+
         FINAL FANTASY is a registered trademark of Square Enix Holdings Co.,
         Ltd.
         <p>FINAL FANTASY XIV © SQUARE ENIX CO., LTD.</p>

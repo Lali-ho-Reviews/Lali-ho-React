@@ -36,7 +36,7 @@ class FcList extends Component {
             <td>{fc.slogan}</td>
             <td>{fc.members}</td>
             <td>{fc.rank}</td>
-            <td><a href={"/FcPage/" + fc.id}>Link</a></td>
+            <td><a href={"/Fc/" + fc.id}>Link</a></td>
           </tr>
         ))}
         </table>

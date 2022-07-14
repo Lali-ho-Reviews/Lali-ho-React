@@ -6,7 +6,8 @@ class FcList extends Component {
   constructor(props){
       super(props);
       this.state = {
-        json: {}
+        data: [
+        ]
       }
   }
 
@@ -18,17 +19,28 @@ class FcList extends Component {
   }
 
   render() {
-    console.log(this.state.data)
+
     return (
       <div>
-        Fc name: {this.state.data[0].name} <br />
-        <br></br>
-        Tagline: {this.state.json.slogan} <br />
-        <br></br>
-        Rank {this.state.json.rank} <br />
-        <br></br>
-        Reviews {} <br />
-        <br></br>
+        <table>
+          <tr>
+            <td>FC NAME</td>
+            <td>Tag</td>
+            <td>Members</td> 
+            <td>Reviews</td>
+            <td>Link</td> 
+          </tr>
+        {this.state.data.map(fc => (
+          <tr>
+            <td>{fc.name}</td>
+            <td>{fc.slogan}</td>
+            <td>{fc.members}</td>
+            <td>{fc.rank}</td>
+            <td><a href={"/FcPage/" + fc.id}>Link</a></td>
+          </tr>
+        ))}
+        </table>
+
       </div>
     );
   }

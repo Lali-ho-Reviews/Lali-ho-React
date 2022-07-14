@@ -6,7 +6,9 @@ import AdminPage from '../pages/AdminPage';
 import UserPage from '../pages/UserPage';
 import FcList from '../pages/FcList';
 import FcPage from '../pages/FcPage';
+import About from '../pages/About';
 import Footer from './Footer';
+
 
 
 
@@ -26,6 +28,7 @@ function App() {
         <Route path='/userpage' element={<UserPage />} />
         <Route path='/fclist' element={<FcList />} />
         <Route path='/fcpage/:id' element={<FcPage />} />
+        <Route path='/about' element={<About />} />
       </Routes>
       <div>
         

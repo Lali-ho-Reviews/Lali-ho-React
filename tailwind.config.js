@@ -3,6 +3,7 @@ module.exports = {
   theme: {
     colors: {
       fgrey: "#21252a",
+      blackbg: "#1c2024",
     },
     extend: {
       fontSize: {

@@ -6,6 +6,7 @@ import AdminPage from '../pages/AdminPage';
 import UserPage from '../pages/UserPage';
 import FcList from '../pages/FcList';
 import FcPage from '../pages/FcPage';
+import Footer from './Footer';
 
 
 
@@ -28,8 +29,7 @@ function App() {
       </Routes>
       <div>
         
-        <p>FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</p>
-        <p>FINAL FANTASY XIV © SQUARE ENIX CO., LTD.</p>
+      <Footer/>
 
         </div>
     </Router>

@@ -15,7 +15,7 @@ function About() {
           <div class="flex justify-start -mr-28 ml-28">
             <img class="object-cover rounded-lg overflow-hidden" src="/lala.png" />
           </div>
-          <div class="-translate-y-96 transform ml-28 -mr-28 p-16 shadow-xl rounded-xl overflow-hidden bg-white">
+          <div class="-translate-y-96 transform ml-28 -mr-28 p-16 shadow-xl rounded-xl overflow-hidden bg-blackbg">
             <div >
 
               <p class="text-5xl font-bold tracking-tight p-2 bg-blackbg rounded-lg">
@@ -31,20 +31,20 @@ function About() {
               use API from XIVapi to help with the information that they needed.
               </p>
             </div>
-            <div class="grid grid-cols-2 gap-6 border-t border-b border-gray-200 my-12 py-8">
+            <div class="grid grid-cols-2 gap-6 border-t border-b border-blue-400 my-12 py-8">
               <div>
-                <p class="text-3xl font-bold text-black">
+                <p class="text-3xl font-bold ">
                   Amelia Jones
                 </p>
-                <p class="text-sm text-black">
+                <p class="text-sm ">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque consectetur error labore consequatur dolorum architecto minima velit nesciunt tempora non at ex quo suscipit officia quibusdam, voluptatibus aliquam nemo commodi?
                 </p>
               </div>
               <div>
-                <p class="text-3xl font-bold text-black">
+                <p class="text-3xl font-bold ">
                   Harley Martin-Farrell
                 </p>
-                <p class="text-sm text-black">
+                <p class="text-sm text-white">
                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur eaque, quisquam saepe suscipit quasi nam voluptatem, voluptate, impedit pariatur illum at sed eos quae commodi sapiente? Earum tenetur incidunt quasi?
                 </p>
               </div>

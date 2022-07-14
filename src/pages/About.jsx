@@ -17,11 +17,13 @@ function About() {
           </div>
           <div class="-translate-y-96 transform ml-28 -mr-28 p-16 shadow-xl rounded-xl overflow-hidden bg-white">
             <div >
-              <p class="text-5xl font-bold tracking-tight p-2 bg-blackbg">
+
+              <p class="text-5xl font-bold tracking-tight p-2 bg-blackbg rounded-lg">
                 Lali-Ho Reviews - A group project for Coder Academy 2022
               </p>
-              <p class="text-xl bg-blackbg p-2">
-              Ever wonder what happens when two jr developers get together to
+              <p class="text-xl bg-blackbg p-2 rounded-sm ">
+              Ever wonder what happens when two Jr developers get together to
+
               create an app for their final semester project? Well, this is it!
               A fun and creative app inspired by their love of gaming
               (particularly MMORPGs). Lali-Ho Reviews is a Ruby on rails API

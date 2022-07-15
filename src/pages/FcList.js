@@ -25,9 +25,9 @@ class FcList extends Component {
         
         {this.state.data.map(fc => (
          
-          <div class="flex flex-col justify-center h-screen">
-          <div
-            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
+          <div class="flex flex-col h-52">
+            <div
+              class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-xs md:max-w-3xl mx-auto border border-white bg-white">
             <div class="w-full md:w-1/3 bg-white grid place-items-center">
               <img src="/startscreen.jpeg" alt="ff14 loading screen backgorund" class="rounded-xl" />
             </div>
@@ -45,8 +45,8 @@ class FcList extends Component {
                 </div>
                 <h3 class="font-black text-gray-800 md:text-3xl text-xl">{fc.name}</h3>
                 <p class="md:text-lg text-gray-500 text-base">{fc.slogan}</p>
-                <p class="text-xl font-black text-gray-800">
-                <a href={"/FcPage/" + fc.id}>Link</a> 
+                <p class="text-xl font-black text-blue-400">
+                <a href={"/Fc/" + fc.id}>See Reviews</a> 
                 </p>
               </div>
             </div>

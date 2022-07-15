@@ -36,10 +36,12 @@ class FcList extends Component {
             <td>{fc.slogan}</td>
             <td>{fc.members}</td>
             <td>{fc.rank}</td>
+
             <td><a href={"/FcPage/" + fc.id}>Link</a></td>
           </tr>
         ))}
         </table>
+
 
         <div class="flex flex-col justify-center h-screen">
           <div
@@ -68,6 +70,8 @@ class FcList extends Component {
             </div>
           </div>
           
+=======
+>>>>>>> main
       </div>
     );
   }

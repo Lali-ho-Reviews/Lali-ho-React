@@ -27,7 +27,8 @@ class FcList extends Component {
          
           <div class="flex flex-col pb-3 pt-1">
             <div
-              class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl shadow-lg p-3 max-w-s md:max-w-lg mx-auto border border-fgrey bg-fgrey">
+              class="relative flex flex-col md:flex-row md:space-x-5 space-y-3  rounded-xl shadow-lg p-3 max-w-s md:max-w-lg mx-auto border border-fgrey bg-fgrey">
+
             <div class="w-full md:w-1/6 bg-fgrey grid place-items-center">
               <img src="/startscreen.jpeg" alt="ff14 loading screen backgorund" class="rounded-xl" />
             </div>

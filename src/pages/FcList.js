@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { useParams  }  from 'react-router-dom';
+import lalihoApi from "../api/lalihoApi";
 
 
 class FcList extends Component {
@@ -12,8 +13,8 @@ class FcList extends Component {
   }
 
   componentDidMount () {
-    const URL = 'http://localhost:3000/companies';
-    fetch(URL).then(response => response.json())
+    const URL = '/companies';
+    lalihoApi.get(URL).then(response => response.data)
     .then(data => { this.setState({data}); });
     
   }

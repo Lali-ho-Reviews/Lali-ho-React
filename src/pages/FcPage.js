@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router-dom";
+import lalihoApi from "../api/lalihoApi";
+import Review from '../components/Review';
 
+// Can only have one state with but with many data sources 
 function FcPage() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    company: {},
+    reviews: []
+  });
   let {id} = useParams();
 
-  
   // Created function to access the LalihoApi and get the details of specific freecompany which then sets the state enforced async function 
   async function fetchData() {
-    const url = 'http://localhost:3000/companies/' + id;
-    const response = await fetch(url)
-    response
-      .json()
-        .then(response => {
-          setData(response);
-        })
+    const response = await lalihoApi.get('/companies/' + id)
         .catch(error => console.error(error))
+    const response_reviews = await lalihoApi.get('/companies/' + id + '/reviews')
+        .catch(error => console.error(error))
+    setData({
+      company: response.data,
+      reviews: response_reviews.data
+    });
   }
   // useEffect implemented to call fetchData on page load, empty array applied to the end to avoid DDOS Attack on the backend and avoid loop
   useEffect(() => {
@@ -33,22 +38,29 @@ function FcPage() {
             </div>
               <div class="w-full md:w-2/3 bg-fgrey flex flex-col space-y-2 p-3">
                 <div class="flex justify-between item-center">
-                  <p class="text-gray-400 text-xs hidden md:block">Rank: {data.rank}</p>
+                  <p class="text-gray-400 text-xs hidden md:block">Rank: {data.company.rank}</p>
                   <div class="flex items-center">
                     <p class="text-blue-400 font-bold text-xs ml-1">
-                      5 reviews 
+                      {data.reviews.length} review/s 
                     </p>
                   </div>
                   
                   <div class=" px-3 py-1 rounded-full text-xs font-s text-gray-400 hidden md:block">
-                    Active members: {data.members} </div>
+                    Active members: {data.company.members} </div>
                 </div>
-                <h3 class="font-black text-gray-300 md:text-l text-l ">{data.name}</h3>
-                <p class="md:text-m text-gray-500 text-base">{data.slogan}</p>
+                <h3 class="font-black text-gray-300 md:text-l text-l ">{data.company.name}</h3>
+                <p class="md:text-m text-gray-500 text-base">{data.company.slogan}</p>
                 <p class="text-s font-black text-blue-400">
                 </p>
               </div>
             </div>
+            {data.reviews.map(review => (
+                      <div>
+                      <Review data={review}/>
+                        
+                      </div>
+            ))}
+            
           </div>
 
   )

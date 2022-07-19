@@ -76,9 +76,13 @@ function FcPage() {
               </p>
             </div>
 
+
             <div class=" px-3 py-1 rounded-full text-xs font-s text-gray-400 hidden md:block">
               Active members: {data.company.members}{" "}
+
             </div>
+            
+            
           </div>
           <h3 class="font-black text-gray-300 md:text-l text-l ">
             {data.company.name}

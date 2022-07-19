@@ -9,7 +9,7 @@ const Review = (props) => {
       >
         {props.data.author}
       </th>
-      <td class="py-4 px-6">{props.data.text}></td>
+      <td class="py-4 px-6">{props.data.text}</td>
       <td class="py-4 px-6">{props.data.rating}</td>
     </tr>
   );

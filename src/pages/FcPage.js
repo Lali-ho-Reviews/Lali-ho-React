@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import lalihoApi from "../api/lalihoApi";
 import Review from "../components/Review";
+import ReviewPost from "../components/ReviewPost";
+
 
 // Can only have one state with but with many data sources
 function FcPage() {
@@ -60,7 +62,10 @@ function FcPage() {
           <p class="md:text-m text-gray-500 text-base">{data.company.slogan}</p>
           <p class="text-s font-black text-blue-400"></p>
         </div>
+        
       </div>
+      <ReviewPost />
+      
       {/* revie table */}
       <div class="overflow-x-auto relative">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">

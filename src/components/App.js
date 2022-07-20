@@ -9,6 +9,7 @@ import FcPage from '../pages/FcPage';
 import About from '../pages/About';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import LoginForm from '../pages/LoginForm';
 
 
 
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
+        <Route path='/auth/signin' element={<LoginForm />} />
         <Route path='/adminpage' element={<AdminPage />} />
         <Route path='/userpage' element={<UserPage />} />
         <Route path='/fc' element={<FcList />} />

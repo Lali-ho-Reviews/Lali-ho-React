@@ -4,10 +4,12 @@ module.exports = {
     colors: {
       fgrey: "#21252a",
       blackbg: "#1c2024",
+      logoblue: "#9DC7CD",
     },
     extend: {
       fontSize: {
         xs: ".5rem",
+        sm: ".75rem"
       },
     },
   },

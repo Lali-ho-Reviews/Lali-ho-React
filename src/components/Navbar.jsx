@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 const Navbar = () => {
   return (
     <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
@@ -45,7 +46,7 @@ const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+        <div class=" w-full md:block md:w-auto" id="mobile-menu">
           <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
               <a

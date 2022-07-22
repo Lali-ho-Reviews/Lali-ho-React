@@ -109,7 +109,7 @@ function FcPage() {
       
       {/* revie table */}
       <div class="overflow-x-auto relative">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <table class="w-auto text-sm text-left text-gray-500 dark:text-gray-400 flex justify-center ">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" class="py-3 px-6">

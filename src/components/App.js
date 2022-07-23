@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
-        <Route path='/auth/signin' activateUser={activateUser} element={<LoginForm />} />
+        <Route path='/auth/signin' element={<LoginForm activateUser={activateUser} />} />
         <Route path='/adminpage' element={<AdminPage />} />
         <Route path='/userpage' element={<UserPage />} />
         <Route path='/fc' element={<FcList />} />

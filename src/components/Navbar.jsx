@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = ({loggedInUser, activateUser}) => {
 
+  const navigate = useNavigate()
   const logout = (e) => {
     e.preventDefault()
     activateUser("")
+    navigate("/") // Optimally, this would navigate back to the previous page
   }
 
   return (

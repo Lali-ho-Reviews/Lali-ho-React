@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { signIn } from "../services/authServices"
 
-const LoginForm = () => {
+const LoginForm = ({activateUser}) => {
 
     const initialFormData = {
         email: "",
@@ -11,8 +12,9 @@ const LoginForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
-
-        
+        console.log(activateUser)
+        activateUser(formData.email)
+        setFormData(initialFormData)
     }
 
     const handleFormData = (e) => {

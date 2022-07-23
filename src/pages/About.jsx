@@ -3,19 +3,19 @@ import React from "react";
 function About() {
     return (
         
-        <section class="py-48 bg-blackbg flex flex-col justify-center">
+        <section class="pt-96 pr-48 w-48   md:py-48 md:w-auto flex flex-col justify-center">
         <div class="grid grid-cols-2 gap-10 max-w-6xl mx-auto">
           <div class="-mt-20 flex justify-end">
-            <img class="h-2/3 object-cover rounded-lg overflow-hidden" src="/ff.png" />
+            <img class="invisible md:visible h-2/3 object-cover rounded-lg overflow-hidden" src="/ff.png" />
           </div>
           
-          <div class="-mt-60 flex justify-start">
+          <div class="invisible md:visible -mt-60 flex justify-start">
             <img class="rounded-lg object-cover overflow-hidden" src="/freecomany.png" />
           </div>
-          <div class="flex justify-start -mr-28 ml-28">
+          <div class=" invisible md:visible flex justify-start lg:-mr-28 lg:ml-28">
             <img class="object-cover rounded-lg overflow-hidden" src="/lala.png" />
           </div>
-          <div class="-translate-y-96 transform ml-28 -mr-28 p-16 shadow-xl rounded-xl overflow-hidden bg-blackbg">
+          <div class="pt-20 lg:pt-0 w-80 lg:w-auto -translate-y-96 transform lg:ml-28 lg:-mr-28 lg:p-16 shadow-xl rounded-xl overflow-hidden bg-blackbg">
             <div >
 
               <p class="text-5xl font-bold tracking-tight p-2 bg-blackbg rounded-lg">

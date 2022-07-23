@@ -15,9 +15,9 @@ const Footer = () => {
             alt="Lali-ho Logo"
           />
         </a>
-        <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+        <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 ">
           <li>
-            <a href="/about" class=" hover:underline md:mr-6 ">
+            <a href="/about" class=" mr-4 hover:underline md:mr-6 ">
               About
             </a>
           </li>
@@ -26,19 +26,14 @@ const Footer = () => {
               Github
             </a>
           </li>
-          <li>
-            <a href="#" class="hover:underline">
-              Contact
-            </a>
-          </li>
         </ul>
       </div>
 
-      <span class="block text-xs text-gray-500 sm:text-center dark:text-gray-400 ">
+      <span class="block text-xs text-gray-500 sm:text-center dark:text-gray-400 sm:mx-auto ">
         © 2022 Lali-ho™ . All Rights Reserved.{" "}
       <hr class=" border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-1" />
       
-        <span class="block text-xs pt-1 pb-0 xs:text-center "></span>
+        <span class="block text-xs pt-1 pb-0 xs:text-center sm:mx-auto "></span>
 
         FINAL FANTASY is a registered trademark of Square Enix Holdings Co.,
         Ltd.

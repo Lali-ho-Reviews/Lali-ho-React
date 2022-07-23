@@ -36,16 +36,20 @@ function About() {
                 <p class="text-3xl font-bold ">
                   Amelia Jones
                 </p>
-                <p class="text-sm ">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque consectetur error labore consequatur dolorum architecto minima velit nesciunt tempora non at ex quo suscipit officia quibusdam, voluptatibus aliquam nemo commodi?
+                <p class="text-sm text-blue-500 ">
+                <a href="https://github.com/ameliaxjones" target="_blank" rel="noopener noreferrer" class="mr-4 hover:underline md:mr-6">
+              Github account
+            </a>
                 </p>
               </div>
               <div>
                 <p class="text-3xl font-bold ">
                   Harley Martin-Farrell
                 </p>
-                <p class="text-sm text-white">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur eaque, quisquam saepe suscipit quasi nam voluptatem, voluptate, impedit pariatur illum at sed eos quae commodi sapiente? Earum tenetur incidunt quasi?
+                <p class="text-sm text-blue-500">
+                <a href="https://github.com/harley-ca" target="_blank" rel="noopener noreferrer" class="mr-4 hover:underline md:mr-6">
+              Github account
+            </a>
                 </p>
               </div>
             </div>

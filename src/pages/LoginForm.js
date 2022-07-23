@@ -1,8 +1,10 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { signIn } from "../services/authServices"
 
 const LoginForm = ({activateUser}) => {
 
+    const navigate = useNavigate()
     const initialFormData = {
         email: "",
         password: ""
@@ -15,6 +17,7 @@ const LoginForm = ({activateUser}) => {
         console.log(activateUser)
         activateUser(formData.email)
         setFormData(initialFormData)
+        navigate("/") // Optimally, this would navigate back to previous page
     }
 
     const handleFormData = (e) => {

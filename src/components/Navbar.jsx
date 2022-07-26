@@ -1,8 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+const Navbar = ({loggedInUser, activateUser}) => {
 
+  const logged = sessionStorage.getItem("username")
 
-const Navbar = () => {
+  const navigate = useNavigate()
+  const logout = (e) => {
+    e.preventDefault()
+    activateUser("")
+    sessionStorage.clear()
+    navigate("/") // Optimally, this would navigate back to the previous page
+  }
 
   const [showNav, setNav] = useState(false);
 
@@ -60,15 +69,47 @@ const Navbar = () => {
                 Free Companies
               </a>
             </li>
-
-            <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Sign in
-              </a>
-            </li>
+            { !logged &&
+              <li>
+                <a
+                  href="/auth/signin"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign In
+                </a>
+              </li>
+            }
+            { !logged &&
+              <li>
+                <a
+                  href="/auth/signup"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign Up
+                </a>
+              </li>
+            }
+            { logged &&
+              <li>
+                <a
+                  href="/#"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  {logged}
+                </a>
+              </li>
+            }
+            { logged &&
+              <li>
+                <a
+                  href="/"
+                  onClick={logout}
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign Out
+                </a>
+              </li>
+            }
           </ul>
           </div>
         </div>

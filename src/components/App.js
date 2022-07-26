@@ -11,6 +11,7 @@ import About from '../pages/About';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import LoginForm from '../pages/LoginForm';
+import SignUpForm from '../pages/SignUpForm';
 
 
 
@@ -18,8 +19,8 @@ import LoginForm from '../pages/LoginForm';
 function App() {
 
   const [loggedInUser, setLoggedInUser] = useState("")
-  const activateUser = (username) => {
-    setLoggedInUser(username)
+  const activateUser = (props) => {
+    setLoggedInUser(props)
   }
 
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/auth/signin' element={<LoginForm activateUser={activateUser} />} />
+        <Route path='/auth/signup' element={<SignUpForm activateUser={activateUser} />} />
         <Route path='/adminpage' element={<AdminPage />} />
         <Route path='/userpage' element={<UserPage />} />
         <Route path='/fc' element={<FcList />} />

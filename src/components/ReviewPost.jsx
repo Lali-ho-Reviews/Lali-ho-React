@@ -3,7 +3,7 @@ import React from "react";
 function ReviewPost() {
   return (
         <form class=" flex justify-center">
-            <div class="mb-4 w-1/2 bg-fgrey rounded-lg border border-gray-900   ">
+            <div class="mb-4 w- bg-fgrey rounded-lg border border-gray-900   ">
                 <div class="py-2 px-4 bg-grey-800 rounded-t-lg dark:bg-gray-800">
                     <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review..." required=""></textarea>
                 </div>

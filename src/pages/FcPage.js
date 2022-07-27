@@ -108,11 +108,11 @@ function FcPage() {
         </form>
       
       {/* revie table */}
-      <div class="overflow-x-auto relative">
+      <div class="overflow-x-auto flex justify-center  rounded-lg">
 
-        <table class="w-auto text-sm text-left text-gray-500 dark:text-gray-400  ">
+        <table class="content-center text-sm text-left text-gray-300" >
 
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead class="text-xs text-logoblue uppercase bg-fgrey ">
             <tr>
               <th scope="col" class="py-3 px-6">
                 Author

@@ -108,14 +108,14 @@ const SignUpForm = ({ activateUser }) => {
           </div>
 
           <div class="text-grey-dark mt-6">
-            Already have an account?
+            Already have an account?  
             <a
               class="no-underline border-b border-blue text-blue-500"
               href="/auth/signin"
             >
-              Log in
+               Log in
             </a>
-            .
+            
           </div>
         </div>
       </div>

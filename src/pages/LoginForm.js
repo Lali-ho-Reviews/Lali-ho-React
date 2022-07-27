@@ -44,7 +44,7 @@ const LoginForm = ({ activateUser }) => {
       <form onSubmit={handleSubmit}>
 
 
-        <input type="submit" value="Login" />
+        
         <div class="bg-grey-lighter min-h-screen flex flex-col">
           <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
             <div class="bg-white px-6 py-8 rounded shadow-md text-blue-500 w-full">
@@ -76,7 +76,7 @@ const LoginForm = ({ activateUser }) => {
                 value="Login"
                 class="w-full text-center py-3 rounded bg-logoblue text-white hover:bg-green-dark focus:outline-none my-1"
               >
-                Login
+                Log in
               </button>
             </div>
 

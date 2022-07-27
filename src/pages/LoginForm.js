@@ -56,8 +56,13 @@ const LoginForm = ({activateUser}) => {
                 </div>
 
                 <input type="submit" value="Login" />
+
+                
             </form>
+
+            
         </>
+        
     )
 }
 

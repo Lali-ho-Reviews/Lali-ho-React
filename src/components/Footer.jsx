@@ -6,7 +6,7 @@ const Footer = () => {
 
     <footer class="p-0 bg-fgrey rounded-lg shadow md:px-6 md:py-4 ">
       <div class="sm:flex sm:items-center sm:justify-between">
-        <a class="flex items-center sm:mb-0">
+        <a href="/" class="flex items-center sm:mb-0">
           <img
             src= "/logo3.png"
 

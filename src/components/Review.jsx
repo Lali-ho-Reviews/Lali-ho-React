@@ -7,7 +7,8 @@ const Review = (props) => {
         scope="row"
         class="py-4 px-6 font-medium text-gray-300 whitespace-nowrap"
       >
-        {props.data.author}
+        { props.data.username && <p>{props.data.username}</p>}
+        { !props.data.username && <p>{props.data.author}</p>}
       </th>
       <td class="py-4 px-6">{props.data.text}</td>
       <td class="py-4 px-6">{props.data.rating}</td>

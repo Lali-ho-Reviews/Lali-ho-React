@@ -1,15 +1,26 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+const Navbar = ({loggedInUser, activateUser}) => {
 
+  const logged = sessionStorage.getItem("username")
 
-const Navbar = () => {
+  const navigate = useNavigate()
+  const logout = (e) => {
+    e.preventDefault()
+    activateUser("")
+    sessionStorage.clear()
+    navigate("/") // Optimally, this would navigate back to the previous page
+  }
 
   const [showNav, setNav] = useState(false);
 
 
+  
+
   return (
     <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-      <div class="container flex flex-wrap justify-between items-center mx-auto">
+      <div class="container flex md:flex md:flex-wrap justify-between items-center mx-auto">
         <a href="/" class="flex items-center">
           <img src="/logo3.png" class="mr-3 h-6 sm:h-9" alt="Lali-ho Logo" />
         </a>
@@ -17,7 +28,7 @@ const Navbar = () => {
           data-collapse-toggle="mobile-menu"
          
           type="button"
-          class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class=" absolute right-8 top-1 p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
           aria-controls="mobile-menu"
           aria-expanded="false" 
         >
@@ -49,30 +60,63 @@ const Navbar = () => {
             ></path>
           </svg>
         </button>
-        <div class={showNav ? "" : "hidden" + " w-full md:block md:w-auto"} id="mobile-menu">
-          <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+        <div class={showNav ? "" : "hidden" + " w-full md:block md:w-auto "} id="mobile-menu">
+          <ul class="flex flex-col md:mt-4 md:flex-row md:space-x-8 md:text-sm md:font-medium">
             <li>
               <a
                 href="/fc"
-                class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                class="block  py-2 pr-4 pl-3 text-white hover:bg-blue-700  rounded md:hover:md:bg-transparent md:text-blue-700 md:p-0"
                 aria-current="page"
               >
                 Free Companies
               </a>
             </li>
-
-            <li>
-              <a
-                href="#"
-                class="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-              >
-                Sign in
-              </a>
-            </li>
+            { !logged &&
+              <li>
+                <a
+                  href="/auth/signin"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign In
+                </a>
+              </li>
+            }
+            { !logged &&
+              <li>
+                <a
+                  href="/auth/signup"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign Up
+                </a>
+              </li>
+            }
+            { logged &&
+              <li>
+                <a
+                  href="/#"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  {logged}
+                </a>
+              </li>
+            }
+            { logged &&
+              <li>
+                <a
+                  href="/"
+                  onClick={logout}
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                >
+                  Sign Out
+                </a>
+              </li>
+            }
           </ul>
           </div>
         </div>
     </nav>
+    
   );
 };
 

@@ -7,7 +7,9 @@ import ReviewPost from "../components/ReviewPost";
 
 // Can only have one state with but with many data sources
 function FcPage() {
+  const logged = sessionStorage.getItem("username") || ""
   const [commentData, setCommentData] = useState('')
+  const [authorData, setAuthorData] = useState('')
   const [ratingData, setRatingData] = useState(5)
   const [data, setData] = useState({
     company: {},
@@ -34,23 +36,29 @@ function FcPage() {
   const handleRatingChange = (event) => {
     setRatingData(event.target.value);
   }
-
-
   const handleCommentChange = (event) => {
     setCommentData(event.target.value);
   }
+    const handleAuthorChange = (event) => {
+    setAuthorData(event.target.value);
+  }
 
-  async function submitReview() {
-    
+  async function submitReview(e) {
+    e.preventDefault();
     lalihoApi
       .post("/companies/" + id + "/reviews", {
         text: commentData,
-        author: "Anonymous",
+        author: authorData,
         rating: ratingData,
-      });
+        username: logged
+      })
+      .catch((error) => {
+        console.log(error);
+      })
       fetchData();
       setCommentData('');
       setRatingData(5);
+      setAuthorData('');
   };
 
   
@@ -100,6 +108,12 @@ function FcPage() {
             <div class="mb-4 w-1/2 bg-fgrey rounded-lg border border-gray-900   ">
                 <div class="py-2 px-4 bg-grey-800 rounded-t-lg dark:bg-gray-800">
                     <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review..." required="" value={commentData} onChange={handleCommentChange}></textarea>
+                    { !logged &&
+                      <textarea id="author" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Anonymous" required value={authorData} onChange={handleAuthorChange}></textarea>
+                    }
+                    { logged && 
+                      <p>Posting as: {logged}</p>
+                    }
                     <label>Rating </label>
                     <input value={ratingData} onChange={handleRatingChange} type="number" class="placeholder-black" id="rating" placeholder="1" min="1" max="5" />
                 </div>

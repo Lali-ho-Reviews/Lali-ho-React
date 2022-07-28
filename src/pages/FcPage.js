@@ -43,8 +43,8 @@ function FcPage() {
     setAuthorData(event.target.value);
   }
 
-  async function submitReview() {
-    
+  async function submitReview(e) {
+    e.preventDefault();
     lalihoApi
       .post("/companies/" + id + "/reviews", {
         text: commentData,

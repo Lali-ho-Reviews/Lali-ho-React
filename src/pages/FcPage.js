@@ -36,20 +36,24 @@ function FcPage() {
   }
 
 
-
   const handleCommentChange = (event) => {
     setCommentData(event.target.value);
   }
 
   async function submitReview() {
-    const post_response = await lalihoApi
+    
+    lalihoApi
       .post("/companies/" + id + "/reviews", {
         text: commentData,
         author: "Anonymous",
         rating: ratingData,
       });
       fetchData();
+      setCommentData('');
+      setRatingData(5);
   };
+
+  
   // useEffect implemented to call fetchData on page load, empty array applied to the end to avoid DDOS Attack on the backend and avoid loop
   useEffect(() => {
     fetchData();

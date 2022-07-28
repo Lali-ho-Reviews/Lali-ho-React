@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route,  } from 'react-router-dom';
 import React, { useState } from 'react';
 import Home from '../pages/Home';
 import ErrorPage from '../pages/ErrorPage';
@@ -22,12 +22,16 @@ function App() {
   const activateUser = (props) => {
     setLoggedInUser(props)
   }
+  
+  
+
 
   return (
     
     <Router>
       <div>
-      <Navbar loggedInUser={loggedInUser} activateUser={activateUser} />
+        {window.location.pathname != '/auth/signin' &&  window.location.pathname != '/auth/signup' ? <Navbar loggedInUser={loggedInUser} activateUser={activateUser} /> : null}
+      
       </div>
       <Routes>
         <Route path='/' element={<Home />} />

@@ -2,10 +2,10 @@ import React from "react";
 
 const Review = (props) => {
   return (
-    <tr class="bg-white dark:bg-gray-800">
+    <tr class="bg-fgrey ">
       <th
         scope="row"
-        class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        class="py-4 px-6 font-medium text-gray-300 whitespace-nowrap"
       >
         {props.data.author}
       </th>

@@ -58,6 +58,7 @@ function FcPage() {
       fetchData();
       setCommentData('');
       setRatingData(5);
+      setAuthorData('');
   };
 
   

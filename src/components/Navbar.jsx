@@ -20,9 +20,9 @@ const Navbar = ({loggedInUser, activateUser}) => {
 
   return (
     <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-      <div class="container flex md:flex md:flex-wrap justify-between items-center mx-auto">
+      <div class="container flex md:flex md:flex-wrap justify-between items-center mx-auto ">
         <a href="/" class="flex items-center">
-          <img src="/logo3.png" class="mr-3 h-6 sm:h-9" alt="Lali-ho Logo" />
+          <img src="/logo3.png" class=" mr-3 h-6 sm:h-9" alt="Lali-ho Logo" />
         </a>
         <button onClick={()=>setNav(!showNav)}
           data-collapse-toggle="mobile-menu"
@@ -61,7 +61,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
           </svg>
         </button>
         <div class={showNav ? "" : "hidden" + " w-full md:block md:w-auto "} id="mobile-menu">
-          <ul class="flex flex-col md:mt-4 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+          <ul class="flex flex-col md:mt-4 md:flex-row md:space-x-8 md:text-sm md:font-medium pt-10 md:pt-0">
             <li>
               <a
                 href="/fc"

@@ -50,7 +50,7 @@ function App() {
         <Route path='/about' element={<About />} />
       </Routes>
       <div>
-        {window.location.pathname != '/profile' ? <Footer/> : null}
+        {window.location.pathname != '/profile/:username' ? <Footer/> : null}
       
 
         </div>

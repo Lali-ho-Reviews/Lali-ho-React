@@ -31,6 +31,7 @@ function App() {
     <Router>
       <div>
         {window.location.pathname != '/auth/signin' &&  window.location.pathname != '/auth/signup' ? <Navbar loggedInUser={loggedInUser} activateUser={activateUser} /> : null}
+        
       
       </div>
       <Routes>
@@ -45,8 +46,8 @@ function App() {
         <Route path='/about' element={<About />} />
       </Routes>
       <div>
-        
-      <Footer/>
+        {window.location.pathname != '/profile' ? <Footer/> : null}
+      
 
         </div>
     </Router>

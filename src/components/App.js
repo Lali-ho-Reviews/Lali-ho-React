@@ -39,11 +39,9 @@ function App() {
         <Route path='/auth/signin' element={<LoginForm activateUser={activateUser} />} />
         <Route path='/auth/signup' element={<SignUpForm activateUser={activateUser} />} />
         <Route path='/adminpage' element={<AdminPage />} />
-<<<<<<< Updated upstream
-        <Route path='/userpage' element={<UserPage />} />
-=======
+
         <Route path='/profile' element={<UserPage />} />
->>>>>>> Stashed changes
+
         <Route path='/fc' element={<FcList />} />
         <Route path='/fc/:id' element={<FcPage />} />
         <Route path='/about' element={<About />} />

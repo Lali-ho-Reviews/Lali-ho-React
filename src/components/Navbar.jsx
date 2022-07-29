@@ -95,11 +95,9 @@ const Navbar = ({loggedInUser, activateUser}) => {
             { logged &&
               <li>
                 <a
-<<<<<<< Updated upstream
-                  href="/#"
-=======
+
                   href="/profile"
->>>>>>> Stashed changes
+
                   class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   {logged}

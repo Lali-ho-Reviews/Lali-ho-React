@@ -40,7 +40,7 @@ function App() {
         <Route path='/auth/signup' element={<SignUpForm activateUser={activateUser} />} />
         <Route path='/adminpage' element={<AdminPage />} />
 
-        <Route path='/profile' element={<UserPage />} />
+        <Route path='/profile/:username' element={<UserPage />} />
 
         <Route path='/fc' element={<FcList />} />
         <Route path='/fc/:id' element={<FcPage />} />

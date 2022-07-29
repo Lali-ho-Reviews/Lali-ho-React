@@ -9,6 +9,8 @@ function UserPage() {
   const [isSelected, setIsSelected] = useState('profile')
   const [userData, setUserData] = useState("")
 
+
+
   let { username } = useParams();
 
   async function fetchData() {
@@ -41,6 +43,7 @@ function UserPage() {
           </div>
         </div>
         
+
       </div>
       
     </div>

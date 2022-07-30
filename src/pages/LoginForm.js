@@ -2,6 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signIn } from "../services/authServices";
 
+// mock details to test 
+
+
+
 const LoginForm = ({ activateUser }) => {
   const navigate = useNavigate();
   const initialFormData = {

@@ -75,7 +75,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
             { !logged &&
               <li>
                 <a
-                  href="/auth/signin"
+                  href="/signin"
                   class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Sign In
@@ -85,7 +85,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
             { !logged &&
               <li>
                 <a
-                  href="/auth/signup"
+                  href="/signup"
                   class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Sign Up
@@ -96,7 +96,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
               <li>
                 <a
 
-                  href="/profile/:username"
+                  href="/account"
 
                   class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >

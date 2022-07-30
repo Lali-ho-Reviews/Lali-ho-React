@@ -7,17 +7,13 @@ import lalihoApi from "../api/lalihoApi";
 
 function UserPage() {
   const [isSelected, setIsSelected] = useState('profile')
-  const [userData, setUserData] = useState("")
-
-
-
-  let { username } = useParams();
+  const [userData, setUserData] = useState({})
 
   async function fetchData() {
     const response = await lalihoApi
-      .get("/users/" + username)
+      .get("/users/" + sessionStorage.getItem("username"))
+      .then(data => { setUserData(data.data); })
       .catch((error) => console.error(error));
-    setUserData(response.data)
   }
 
   useEffect(() => {
@@ -35,12 +31,11 @@ function UserPage() {
               class="block py-3 px-6 text-grey-200 font-semibold border-b border-blue-500">
               Profile
             </button>
-            {isSelected === 'profile' ? <ProfileForm /> : ''}
+            {isSelected === 'profile' ? <ProfileForm value={userData} /> : ''}
             <button onClick={() => setIsSelected('reviews')}  class="static py-3 px-6 text-grey-200 font-semibold ">
               Reviews
             </button>
-            {isSelected === 'reviews' ? <ProfileReviewForm userData={userData} /> : ''}
-         
+            {isSelected === 'reviews' ? <ProfileReviewForm value={userData} /> : ''}
         </div>
         
 

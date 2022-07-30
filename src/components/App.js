@@ -19,35 +19,34 @@ function App() {
     setLoggedInUser(props);
   };
 
+
   return (
     <Router>
       <div>
-        {window.location.pathname != "/auth/signin" &&
-        window.location.pathname != "/auth/signup" ? (
+
+        {window.location.pathname != "/signin" &&
+        window.location.pathname != "/signup" ? (
+
           <Navbar loggedInUser={loggedInUser} activateUser={activateUser} />
         ) : null}
       </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="*" element={<ErrorPage />} />
-        <Route
-          path="/auth/signin"
-          element={<LoginForm activateUser={activateUser} />}
-        />
-        <Route
-          path="/auth/signup"
-          element={<SignUpForm activateUser={activateUser} />}
-        />
-        <Route path="/adminpage" element={<AdminPage />} />
 
-        <Route path="/profile/:username" element={<UserPage />} />
+        <Route path='/' element={<Home />} />
+        <Route path='*' element={<ErrorPage />} />
+        <Route path='/signin' element={<LoginForm activateUser={activateUser} />} />
+        <Route path='/signup' element={<SignUpForm activateUser={activateUser} />} />
+        <Route path='/adminpage' element={<AdminPage />} />
+        <Route path='/account' element={<UserPage />} />
 
-        <Route path="/fc" element={<FcList />} />
-        <Route path="/fc/:id" element={<FcPage />} />
-        <Route path="/about" element={<About />} />
+
+        <Route path='/fc' element={<FcList />} />
+        <Route path='/fc/:id' element={<FcPage />} />
+        <Route path='/about' element={<About />} />
       </Routes>
       <div>
-        {window.location.pathname != "/profile/:username" ? <Footer /> : null}
+        {window.location.pathname != "/account" ? <Footer /> : null}
+
       </div>
     </Router>
   );

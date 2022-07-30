@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserPage from "../pages/UserPage";
-
+import lalihoApi from "../api/lalihoApi";
 const Navbar = ({loggedInUser, activateUser}) => {
 
   const logged = sessionStorage.getItem("username")
@@ -96,7 +96,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
               <li>
                 <a
 
-                  href="/profile"
+                  href="/profile/:username"
 
                   class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >

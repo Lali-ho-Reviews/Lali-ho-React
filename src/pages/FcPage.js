@@ -7,7 +7,7 @@ import ReviewPost from "../components/ReviewPost";
 
 // Can only have one state with but with many data sources
 function FcPage() {
-  const logged = sessionStorage.getItem("username") || ""
+  const logged = sessionStorage.getItem("username") || ''
   const [commentData, setCommentData] = useState('')
   const [authorData, setAuthorData] = useState('')
   const [ratingData, setRatingData] = useState(5)
@@ -49,8 +49,7 @@ function FcPage() {
       .post("/companies/" + id + "/reviews", {
         text: commentData,
         author: authorData,
-        rating: ratingData,
-        username: logged
+        rating: ratingData
       })
       .catch((error) => {
         console.log(error);

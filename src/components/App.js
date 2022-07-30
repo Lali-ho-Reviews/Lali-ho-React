@@ -16,7 +16,6 @@ import SignUpForm from "../pages/SignUpForm";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState("");
   const activateUser = (props) => {
-
     setLoggedInUser(props);
   };
 
@@ -24,12 +23,15 @@ function App() {
   return (
     <Router>
       <div>
+
         {window.location.pathname != "/signin" &&
         window.location.pathname != "/signup" ? (
+
           <Navbar loggedInUser={loggedInUser} activateUser={activateUser} />
         ) : null}
       </div>
       <Routes>
+
         <Route path='/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
         <Route path='/signin' element={<LoginForm activateUser={activateUser} />} />
@@ -44,6 +46,7 @@ function App() {
       </Routes>
       <div>
         {window.location.pathname != "/account" ? <Footer /> : null}
+
       </div>
     </Router>
   );

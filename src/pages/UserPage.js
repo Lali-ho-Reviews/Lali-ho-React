@@ -36,7 +36,6 @@ function UserPage() {
               Reviews
             </button>
             {isSelected === 'reviews' ? <ProfileReviewForm value={userData} /> : ''}
-         
         </div>
         
 

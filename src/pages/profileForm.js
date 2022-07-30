@@ -1,6 +1,7 @@
 import React from "react";
 
-function ProfileForm() {
+
+function ProfileForm(props) {
   return (
     <div class="w-full  mx-auto px-6 flex  lg:pl-72   ">
       
@@ -22,7 +23,7 @@ function ProfileForm() {
             <input
               type="text"
               class="flex-grow border border-red-200 rounded py-1 px-3"
-              placeholder="Username"
+              value={props.value.username} class="text-blue-500"
             />
           </div>
           <div class="flex items-center mb-4">

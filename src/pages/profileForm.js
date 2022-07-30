@@ -3,7 +3,7 @@ import React from "react";
 function ProfileForm() {
   return (
     <div class="w-full  mx-auto px-6 flex  lg:pl-72   ">
-      <div class="flex-grow">
+      
         <div class="flex flex-col mx-40 ">
           <div class="flex items-center mb-4">
             <label for="email" class="w-24 font-semibold text-gray-200">
@@ -58,7 +58,7 @@ function ProfileForm() {
             </button>
           </div>
         </div>
-      </div>
+      
     </div>
     
     

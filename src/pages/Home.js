@@ -16,7 +16,7 @@ function Home() {
 
       </div>
       <div class="w-full lg:w-1/2 lg:py-6 text-center">
-        <img src="/landing.png" alt="FF14 class image " />
+        <img src="/landing.png" alt="FF14 classes" />
       </div>
 
 

@@ -10,12 +10,14 @@ function FcList() {
     companies: [],
     xiv_companies: []
   });
+  const { search } = window.location;
+  const query = new URLSearchParams(search).get('s');
 
   // Fetch data from both LalihoApi and XIVAPI
   async function fetchData() {
     // Get request laliho with support for queries
     const lalihoResponse = await lalihoApi
-      .get("/companies")
+      .get("/companies/search/" + query)
       .then(response => response.data)
       .catch((error) => console.error(error));
     // const xivResponse = await xivApi

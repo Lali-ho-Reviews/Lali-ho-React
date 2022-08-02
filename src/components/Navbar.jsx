@@ -16,9 +16,6 @@ const Navbar = ({loggedInUser, activateUser}) => {
 
   const [showNav, setNav] = useState(false);
 
-
-  
-
   return (
     <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
       <div class="container flex md:flex md:flex-wrap justify-between items-center mx-auto ">

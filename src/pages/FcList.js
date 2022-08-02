@@ -12,12 +12,17 @@ function FcList() {
   });
   const { search } = window.location;
   const query = new URLSearchParams(search).get('s');
+  let urlSuffixLaliho = ""
+  if (query) {
+    urlSuffixLaliho = `search/${query}`
+  }
+
 
   // Fetch data from both LalihoApi and XIVAPI
   async function fetchData() {
     // Get request laliho with support for queries
     const lalihoResponse = await lalihoApi
-      .get("/companies/search/" + query)
+      .get("/companies/" + urlSuffixLaliho)
       .then(response => response.data)
       .catch((error) => console.error(error));
     // const xivResponse = await xivApi
@@ -38,7 +43,7 @@ function FcList() {
     <div>
       {data.companies.map(fc => (
          
-         <div class="flex flex-col pb-3 pt-1">
+         <div class="flex flex-col pb-3 pt-1" key={fc.id}>
            <div
              class="relative flex flex-col md:flex-row md:space-x-5 space-y-3  rounded-xl shadow-lg p-3 max-w-s md:max-w-lg mx-auto border border-fgrey bg-fgrey">
 

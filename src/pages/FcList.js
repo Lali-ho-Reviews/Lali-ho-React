@@ -41,6 +41,7 @@ function FcList() {
 
   return (
     <div>
+      {query && data.companies.length > 0 && <p>Showing results for "{query}"</p>}
       {data.companies.map(fc => (
          
          <div class="flex flex-col pb-3 pt-1" key={fc.id}>
@@ -71,6 +72,7 @@ function FcList() {
            </div>
          </div>
          ))}
+         { data.companies.length < 1 && <p>Sorry! We couldn't find any Free Companies with the search term "{query}"</p>}
    </div>
   );
 }

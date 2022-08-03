@@ -20,6 +20,8 @@ function FcList() {
     urlSuffixLaliho = `search/${query}`
     urlSuffixXiv = `search?name=${query}&columns=Name,ID,Server`
   }
+
+  // Essentially redux
   async function updateData(name, value) {
     setData(data => ({
       ...data,
@@ -37,8 +39,8 @@ function FcList() {
       .catch((error) => console.error(error));
     updateData("companies", lalihoResponse)
   }
+  
   async function fetchXivData() {
-    // XIVAPI requires a search query
     const xivResponse = await ffxxivApi
       .get("/freecompany/" + urlSuffixXiv)
       .then(response => response.data.Results.map((company) => {

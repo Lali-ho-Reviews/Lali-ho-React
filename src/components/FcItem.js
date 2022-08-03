@@ -1,4 +1,25 @@
+import ffxxivApi from "../api/ffxxivApi";
+
 const FcItem = (props) => {
+
+    async function addToLaliho(id) {
+        console.log(id)
+        // const xivResponse = await ffxxivApi
+        //     .get(`/freecompany/${id}`)
+        //     .then(response => response.data)
+        //     .then(response => response.data.Results.map((company) => {
+        //         return {
+        //             name: company.Name,
+        //             ff_id: company.ID,
+        //             server: company.Server,
+        //             slogan: company.Slogan,
+        //             rank: company.Rank,
+        //             members: company.ActiveMemberCount
+        //         }
+        //     }))
+        //     .catch((error) => console.error(error));
+    }
+
     return (
         <div class="flex flex-col pb-3 pt-1" key={props.data.id}>
             <div
@@ -23,7 +44,7 @@ const FcItem = (props) => {
                     {props.data.slogan && <p class="md:text-m text-gray-500 text-base">{props.data.slogan}</p>}
                     <p class="text-s font-black text-blue-400">
                         {props.data.id && <a href={"/Fc/" + props.data.id}>See Reviews</a>}
-                        {!props.data.id && <p>Post a review</p>}
+                        {!props.data.id && <button onClick={() => addToLaliho(props.data.ff_id)}>Post a review</button>}
                     </p>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
     e.preventDefault()
     activateUser("")
     sessionStorage.clear()
-    navigate("/") // Optimally, this would navigate back to the previous page
+    navigate("") // Optimally, this would navigate back to the previous page
   }
 
   const [showNav, setNav] = useState(false);

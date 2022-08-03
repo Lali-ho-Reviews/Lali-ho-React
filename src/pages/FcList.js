@@ -9,7 +9,8 @@ function FcList() {
   const logged = sessionStorage.getItem("username") || ''
   const [data, setData] = useState({
     companies: [],
-    xiv_companies: []
+    xiv_companies: [],
+    fetched: false
   });
   const { search } = window.location;
   const query = new URLSearchParams(search).get('s');
@@ -40,7 +41,8 @@ function FcList() {
       .catch((error) => console.error(error));
     setData({
       companies: lalihoResponse,
-      xiv_companies: xivResponse
+      xiv_companies: xivResponse,
+      fetched: true
     });
   }
   // useEffect implemented to call fetchData on page load, empty array applied to the end to avoid DDOS Attack on the backend and avoid loop
@@ -51,13 +53,15 @@ function FcList() {
   return (
     <div>
       {query && <h3>Showing search results for "{query}"</h3>}
+      {!data.fetched && <p>Loading...</p>}
+      {data.fetched && data.companies.length < 1 && <p>Sorry, we couldn't find any results in the Laliho Database.</p>}
+      {data.fetched && data.xiv_companies.length < 1 && <p>Sorry, we couldn't find any results in the Lodestone Database.</p>}
       <div>
         {data.companies.length > 0 &&<> <h3>Laliho Results:</h3></>}
         {data.companies.map((fc) => (
                 <FcItem data={fc} />
             
         ))}
-        { data.companies.length < 1 && <p>Sorry! We couldn't find any Free Companies for "{query}" on Laliho.</p>}
       </div>
       <div>
         {data.xiv_companies.length > 0 && <h3>Lodestone Results:</h3>}
@@ -65,7 +69,6 @@ function FcList() {
                 <FcItem data={fc} />
             
         ))}
-        { data.xiv_companies.length < 1 && <p>Sorry! We couldn't find any Free Companies  for "{query}" on the Lodestone.</p>}
       </div>
     </div>
   );

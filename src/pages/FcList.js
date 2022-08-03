@@ -28,20 +28,19 @@ function FcList() {
       .get("/companies/" + urlSuffixLaliho)
       .then(response => response.data)
       .catch((error) => console.error(error));
-    // const xivResponse = await ffxxivApi
-    //   .get("/freecompany/" + urlSuffixXiv)
-    //   .then(response => response.data.Results.map((company) => {
-    //     return {
-    //       name: company.Name,
-    //       ff_id: company.ID,
-    //       server: company.Server
-    //     }
-    //   }))
-    //   .then(response => console.log(response))
-    //   .catch((error) => console.error(error));
+    const xivResponse = await ffxxivApi
+      .get("/freecompany/" + urlSuffixXiv)
+      .then(response => response.data.Results.map((company) => {
+        return {
+          name: company.Name,
+          ff_id: company.ID,
+          server: company.Server
+        }
+      }))
+      .catch((error) => console.error(error));
     setData({
       companies: lalihoResponse,
-      xiv_companies: {}
+      xiv_companies: xivResponse
     });
   }
   // useEffect implemented to call fetchData on page load, empty array applied to the end to avoid DDOS Attack on the backend and avoid loop
@@ -51,13 +50,23 @@ function FcList() {
 
   return (
     <div>
-      {query && data.companies && <p>Showing results for "{query}"</p>}
-      {data.companies.map((fc) => (
-              
-              <FcItem data={fc} />
-          
-      ))}
-      { data.companies.length < 1 && <p>Sorry! We couldn't find any Free Companies with the search term "{query}"</p>}
+      {query && <h3>Showing search results for "{query}"</h3>}
+      <div>
+        {data.companies.length > 0 &&<> <h3>Laliho Results:</h3></>}
+        {data.companies.map((fc) => (
+                <FcItem data={fc} />
+            
+        ))}
+        { data.companies.length < 1 && <p>Sorry! We couldn't find any Free Companies for "{query}" on Laliho.</p>}
+      </div>
+      <div>
+        {data.xiv_companies.length > 0 && <h3>Lodestone Results:</h3>}
+        {data.xiv_companies.map((fc) => (
+                <FcItem data={fc} />
+            
+        ))}
+        { data.xiv_companies.length < 1 && <p>Sorry! We couldn't find any Free Companies  for "{query}" on the Lodestone.</p>}
+      </div>
     </div>
   );
 }

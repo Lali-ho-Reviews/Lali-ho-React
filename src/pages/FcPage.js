@@ -102,7 +102,7 @@ function FcPage() {
             <div class="mb-4 w-1/2 bg-fgrey rounded-lg border border-gray-900   ">
                 <div class="py-2 px-4 bg-grey-800 rounded-t-lg dark:bg-gray-800">
 
-                    <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review" required="" value={commentData} onChange={handleCommentChange}></textare
+                    <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review" required="" value={commentData} onChange={handleCommentChange}></textarea>
 
                     <label>Rating </label>
                     <input value={ratingData} onChange={handleRatingChange} type="number" class="text-blue-500 bg-gray-800" id="rating" min="1" max="5" />

@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import ReactDOM from 'react-dom';
 import App from '../components/App';
 
+
 test('renders footer', () => {
   const { getByText } = render (<App/>);
   const linkElement = getByText(/about/i);

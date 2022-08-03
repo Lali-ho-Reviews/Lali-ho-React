@@ -101,14 +101,14 @@ function FcPage() {
       <form onSubmit={submitReview} class="flex justify-center">
             <div class="mb-4 w-1/2 bg-fgrey rounded-lg border border-gray-900   ">
                 <div class="py-2 px-4 bg-grey-800 rounded-t-lg dark:bg-gray-800">
-                    <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review..." required="" value={commentData} onChange={handleCommentChange}></textarea>
-                      <p>Posting as: {logged}</p>
+                    <textarea id="comment" rows="1" class="px-0 w-full text-sm bg-gray-800 focus:ring-0 text-white placeholder-gray-400" placeholder="Write a review" required="" value={commentData} onChange={handleCommentChange}></textarea>
+                      
                     <label>Rating </label>
-                    <input value={ratingData} onChange={handleRatingChange} type="number" class="placeholder-black" id="rating" placeholder="1" min="1" max="5" />
+                    <input value={ratingData} onChange={handleRatingChange} type="number" class="text-blue-500 bg-gray-800" id="rating" min="1" max="5" />
                 </div>
                 <div class="flex justify-between items-center py-2 px-3 border-t border-gray-600">
                     <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-small text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-900 hover:bg-blue-800">
-                        Post Review
+                        Post Review as {logged}
                     </button>
                 </div>
             </div>

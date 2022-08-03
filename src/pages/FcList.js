@@ -20,7 +20,13 @@ function FcList() {
     urlSuffixLaliho = `search/${query}`
     urlSuffixXiv = `search?name=${query}&columns=Name,ID,Server`
   }
-
+  async function updateData(name, value) {
+    setData(data => ({
+      ...data,
+      [name]: value,
+      'fetched': true
+    }))
+  }
 
   // Fetch data from both LalihoApi and XIVAPI
   async function fetchData() {
@@ -29,6 +35,9 @@ function FcList() {
       .get("/companies/" + urlSuffixLaliho)
       .then(response => response.data)
       .catch((error) => console.error(error));
+    updateData("companies", lalihoResponse)
+  }
+  async function fetchXivData() {
     // XIVAPI requires a search query
     const xivResponse = await ffxxivApi
       .get("/freecompany/" + urlSuffixXiv)
@@ -39,16 +48,13 @@ function FcList() {
           server: company.Server
         }
       }))
-      .catch((error) => console.error(error));
-    setData({
-      companies: lalihoResponse,
-      xiv_companies: xivResponse,
-      fetched: true
-    });
+      .catch((error) => console.error(error))
+    updateData("xiv_companies", xivResponse)
   }
   // useEffect implemented to call fetchData on page load, empty array applied to the end to avoid DDOS Attack on the backend and avoid loop
   useEffect(() => {
-    fetchData();
+    if (query) {fetchXivData()}
+    fetchData()
   }, []);
 
   return (
@@ -65,7 +71,7 @@ function FcList() {
         <p>Please enter a search query to browse Free Companies from the Lodestone database!</p>
       }
       <div>
-        {data.companies.length > 0 && <h3>Laliho Results:</h3>}
+        {data.companies.length > 0 && query && <h3>Laliho Results:</h3>}
         {data.companies.map((fc) => (<FcItem data={fc} />))}
       </div>
       <div>

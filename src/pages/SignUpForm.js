@@ -111,7 +111,7 @@ const SignUpForm = ({ activateUser }) => {
             Already have an account?  
             <a
               class="no-underline border-b border-blue text-blue-500"
-              href="/auth/signin"
+              href="/signin"
             >
                Log in
             </a>

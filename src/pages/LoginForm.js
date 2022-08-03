@@ -88,7 +88,7 @@ const LoginForm = ({ activateUser }) => {
               Don't have an account?
               <a
                 class="no-underline border-b border-blue text-blue-500"
-                href="/auth/signup"
+                href="/signup"
               >
                 Create one
               </a>

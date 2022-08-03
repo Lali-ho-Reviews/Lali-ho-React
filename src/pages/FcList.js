@@ -29,6 +29,7 @@ function FcList() {
       .get("/companies/" + urlSuffixLaliho)
       .then(response => response.data)
       .catch((error) => console.error(error));
+    // XIVAPI requires a search query
     const xivResponse = await ffxxivApi
       .get("/freecompany/" + urlSuffixXiv)
       .then(response => response.data.Results.map((company) => {
@@ -52,23 +53,24 @@ function FcList() {
 
   return (
     <div>
-      {query && <h3>Showing search results for "{query}"</h3>}
       {!data.fetched && <p>Loading...</p>}
-      {data.fetched && data.companies.length < 1 && <p>Sorry, we couldn't find any results in the Laliho Database.</p>}
-      {data.fetched && data.xiv_companies.length < 1 && <p>Sorry, we couldn't find any results in the Lodestone Database.</p>}
+      { query && data.fetched &&
+        <div>
+          <h3 class="text-xl bg-blackbg p-2 rounded-sm ">Showing search results for "{query}"</h3>
+          {data.companies.length < 1 && <p>Sorry, we couldn't find any results in the Laliho Database.</p>}
+          {data.xiv_companies.length < 1 && <p>Sorry, we couldn't find any results in the Lodestone Database.</p>}
+        </div>
+      }
+      { !query && 
+        <p>Please enter a search query to browse Free Companies from the Lodestone database!</p>
+      }
       <div>
-        {data.companies.length > 0 &&<> <h3>Laliho Results:</h3></>}
-        {data.companies.map((fc) => (
-                <FcItem data={fc} />
-            
-        ))}
+        {data.companies.length > 0 && <h3>Laliho Results:</h3>}
+        {data.companies.map((fc) => (<FcItem data={fc} />))}
       </div>
       <div>
         {data.xiv_companies.length > 0 && <h3>Lodestone Results:</h3>}
-        {data.xiv_companies.map((fc) => (
-                <FcItem data={fc} />
-            
-        ))}
+        {data.xiv_companies.map((fc) => (<FcItem data={fc} />))}
       </div>
     </div>
   );

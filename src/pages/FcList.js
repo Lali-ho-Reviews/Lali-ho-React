@@ -5,6 +5,7 @@ import ffxxivApi from "../api/ffxxivApi";
 import lalihoApi from "../api/lalihoApi";
 import FcItem from "../components/FcItem";
 import SvgLoader from "../components/loading/SvgLoader";
+import Search from "../components/Search";
 
 function FcList() {
   const logged = sessionStorage.getItem("username") || "";
@@ -66,7 +67,13 @@ function FcList() {
 
   return (
     <>
-      <div class="h-screen">
+    <div class="flex items-center justify-center p-3 ">
+      <div class="w-1/2 h-1/3">
+          <Search />
+          </div>
+        </div>
+      <div>
+        
         <div class=" flex justify-center pt-2 flex-row	">
           {query && <h3>Showing search results for "{query}"</h3>}
         </div>

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import ffxxivApi from "../api/ffxxivApi";
 import lalihoApi from "../api/lalihoApi";
 import FcItem from "../components/FcItem";
+import Search from "../components/Search";
 
 
 function FcList() {
@@ -65,10 +66,14 @@ function FcList() {
   return (
    <>
    <div>
-      <div class=" flex justify-center pt-2 ">{query && <h3>Showing search results for "{query}"</h3>}</div>
+   
+      <div class="flex justify-center pt-2">
+        <Search />
+        {query && <h3>Showing search results for "{query}"</h3>}
+      </div>
 
       <div class="text-gray-200 px-10 pt-4 ">
-        {!data.laliFetched && <p>Loading...</p>}
+        {!data.laliFetched && <p>Loading data from Laliho...</p>}
         {query && data.laliFetched && data.companies.length < 1 && (
           <p>Sorry, we couldn't find any results in the Laliho Database.</p>
         )}
@@ -89,6 +94,7 @@ function FcList() {
             <FcItem data={fc} />
           ))}
         </div>
+        {query && !data.xivFetched && <p>Loading data from the Lodestone...</p>}
         <div class="pt-4">
           {data.xiv_companies.length > 0 && <h3>Lodestone Results:</h3>}
           {data.xiv_companies.map((fc) => (

@@ -78,7 +78,7 @@ function FcPage() {
             </p>
             <div class="flex items-center">
               <p class="text-blue-400 font-bold text-xs ml-1">
-                {data.reviews.length} review/s
+                {data.reviews.length} review/s ({data.reviews.reduce((accumulator, object) => {return accumulator + object.rating;}, 0)/data.reviews.length} Avg Rating) 
               </p>
             </div>
 

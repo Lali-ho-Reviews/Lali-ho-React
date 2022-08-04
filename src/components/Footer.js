@@ -6,16 +6,16 @@ const Footer = () => {
 
     <footer class="p-0 bg-fgrey rounded-lg shadow md:px-6 md:py-4 ">
       <div class="sm:flex sm:items-center sm:justify-between">
-        <a href="/" class="flex items-center sm:mb-0">
+        <a href="/" class="flex items-center sm:mb-0 pl-2 ">
           <img
-            src= "/logo3.png"
+            src= "/logoxs-s.png"
 
-            class=" h-6 pt-0 m-0"
+            class=" h-6 pt-0 m-0 "
 
             alt="Lali-ho Logo"
           />
         </a>
-        <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 ">
+        <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 pt-2 pl-2 md:pt-0 md:pl-0 ">
           <li>
             <a href="/about" class=" mr-4 hover:underline md:mr-6 ">
               About

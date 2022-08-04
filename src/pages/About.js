@@ -23,7 +23,7 @@ function About() {
             src="/lala.png"
           />
         </div>
-        <div class="pt-20 lg:pt-0 w-80 lg:w-auto -translate-y-96 transform lg:ml-28 lg:-mr-28 lg:p-16 shadow-xl rounded-xl overflow-hidden bg-blackbg">
+        <div class="pt-10 lg:pt-0 w-80 lg:w-auto -translate-y-80 transform lg:ml-28 lg:-mr-28 lg:p-16 shadow-xl rounded-xl overflow-hidden bg-blackbg">
           <div>
             <p class="text-5xl font-bold tracking-tight p-2 bg-blackbg rounded-lg">
               Lali-Ho Reviews - A group project for Coder Academy 2022

@@ -67,6 +67,7 @@ function FcList() {
 
   return (
     <>
+    <div class="h-max">
     <div class="flex items-center justify-center p-3 ">
       <div class="w-1/2 h-1/3">
           <Search />
@@ -92,7 +93,7 @@ function FcList() {
             </div>
           </div>
 
-          <div class="pt-4 ">
+          <div class="pt-4  ">
             <h3>Lodestone Results:</h3>
             {data.xiv_companies.map((fc) => (
               <FcItem data={fc} />
@@ -107,6 +108,7 @@ function FcList() {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <ScrollToTop />
     </>

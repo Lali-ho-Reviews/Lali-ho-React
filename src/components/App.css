@@ -1,19 +1,8 @@
 body {
   background-color: #1c2024;
   color: #dddddd;
-  height: 100%;
+  min-height: 100vh;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -21,8 +10,11 @@ body {
 
 footer {
   position: sticky;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
+  
+  
+
   
 }
 

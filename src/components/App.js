@@ -46,7 +46,7 @@ function App() {
         <Route path="/adminpage" element={<AdminPage />} />
         <Route
           path="/account"
-          element={loggedInUser ? <UserPage /> : <Navigate to="/signin" />}
+          element={loggedInUser == "" ? <UserPage /> : <Navigate to="/signin" />}
         />
         <Route path="/fc" element={<FcList />} />
         <Route path="/fc/:id" element={<FcPage />} />

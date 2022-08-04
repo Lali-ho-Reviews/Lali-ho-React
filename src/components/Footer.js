@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-
-    <footer class="p-0 bg-fgrey rounded-lg shadow md:px-6 md:py-4 ">
+    
+    <footer class="p-0 bg-fgrey rounded-lg shadow md:px-6 md:py-4  min-h-fix">
       <div class="sm:flex sm:items-center sm:justify-between">
         <a href="/" class="flex items-center sm:mb-0 pl-2 ">
           <img

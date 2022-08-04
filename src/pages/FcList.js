@@ -67,9 +67,9 @@ function FcList() {
    <>
    <div>
    
-      <div class="flex justify-center pt-2">
-        <Search />
+      <div class="flex justify-center w-1/2 pt-2">
         {query && <h3>Showing search results for "{query}"</h3>}
+        <Search />
       </div>
 
       <div class="text-gray-200 px-10 pt-4 ">

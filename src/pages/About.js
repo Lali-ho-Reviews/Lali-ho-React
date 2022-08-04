@@ -11,7 +11,7 @@ function About() {
           />
         </div>
 
-        <div class="invisible lg:visible -mt-60 flex justify-start">
+        <div class="invisible lg:visible -mt-48 flex justify-start">
           <img
             class="rounded-lg object-cover overflow-hidden"
             src="/freecomany.png"
@@ -49,6 +49,14 @@ function About() {
                 >
                   Github account
                 </a>
+                <div class="text-gray-200 pt-2">
+                <p>Favourite Race: Viera
+                </p>
+                <p>Favourite City: Limsa
+                </p>
+                <p>Favourite Job: WHM/WAR
+                </p>
+                </div>
               </p>
             </div>
             <div>
@@ -62,6 +70,14 @@ function About() {
                 >
                   Github account
                 </a>
+                <div class="text-gray-200 pt-2">
+                <p>Favourite Race: Roegadyn
+                </p>
+                <p>Favourite City: Limsa
+                </p>
+                <p>Favourite Job: DRG
+                </p>
+                </div>
               </p>
             </div>
           </div>

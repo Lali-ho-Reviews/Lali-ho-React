@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React, { useState } from "react";
 import Home from "../pages/Home";
 import ErrorPage from "../pages/ErrorPage";
@@ -19,35 +20,34 @@ function App() {
     setLoggedInUser(props);
   };
 
-
   return (
     <Router>
       <div>
-
         {window.location.pathname != "/signin" &&
         window.location.pathname != "/signup" ? (
-
           <Navbar loggedInUser={loggedInUser} activateUser={activateUser} />
         ) : null}
       </div>
       <Routes>
-
-        <Route path='/' element={<Home />} />
-        <Route path='*' element={<ErrorPage />} />
-        <Route path='/signin' element={<LoginForm activateUser={activateUser} />} />
-        <Route path='/signup' element={<SignUpForm activateUser={activateUser} />} />
-        <Route path='/adminpage' element={<AdminPage />} />
-        <Route path='/account' element={<UserPage />} />
-
-
-        <Route path='/fc' element={<FcList />} />
-        <Route path='/fc/:id' element={<FcPage />} />
-        <Route path='/about' element={<About />} />
+        
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<ErrorPage />} />
+          <Route
+            path="/signin"
+            element={<LoginForm activateUser={activateUser} />}
+          />
+          <Route
+            path="/signup"
+            element={<SignUpForm activateUser={activateUser} />}
+          />
+          <Route path="/adminpage" element={<AdminPage />} />
+          <Route path="/account" element={<UserPage />} />
+          <Route path="/fc" element={<FcList />} />
+          <Route path="/fc/:id" element={<FcPage />} />
+          <Route path="/about" element={<About />} />
+        
       </Routes>
-      <div>
-        {window.location.pathname != "/account" ? <Footer /> : null}
-
-      </div>
+      <div>{window.location.pathname != "/account" ? <Footer /> : null}</div>
     </Router>
   );
 }

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { ScrollToTop } from '../components';
 import { useParams } from "react-router-dom";
 import ffxxivApi from "../api/ffxxivApi";
 import lalihoApi from "../api/lalihoApi";
 import FcItem from "../components/FcItem";
 
-//
+
 function FcList() {
   const logged = sessionStorage.getItem("username") || "";
   const [data, setData] = useState({
@@ -52,7 +53,8 @@ function FcList() {
   }, []);
 
   return (
-    <div>
+   <>
+   <div>
       <div class=" flex justify-center pt-2 ">{query && <h3>Showing search results for "{query}"</h3>}</div>
 
       <div class="text-gray-200 px-10 pt-4 ">
@@ -82,6 +84,8 @@ function FcList() {
         </div>
       </div>
     </div>
+    < ScrollToTop />
+    </>
   );
 }
 

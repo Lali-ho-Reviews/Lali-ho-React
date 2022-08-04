@@ -63,7 +63,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
             <li>
               <a
                 href="/fc"
-                class="block  py-2 pr-4 pl-3 text-white hover:bg-blue-700  rounded md:hover:md:bg-transparent md:text-blue-700 md:p-0"
+                class="block  py-2 pr-4 pl-3 text-white hover:bg-blue-500  rounded md:hover:md:bg-transparent md:text-blue-500 md:p-0"
                 aria-current="page"
               >
                 Free Companies
@@ -73,7 +73,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
               <li>
                 <a
                   href="/signin"
-                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-500 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Sign In
                 </a>
@@ -83,7 +83,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
               <li>
                 <a
                   href="/signup"
-                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-500 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Sign Up
                 </a>
@@ -93,7 +93,7 @@ const Navbar = ({loggedInUser, activateUser}) => {
               <li>
                 <a
                   href="/account"
-                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
+                  class="block py-2 pr-4 pl-3 text-white hover:bg-blue-700 rounded md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0  md:dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   {logged}
                 </a>
